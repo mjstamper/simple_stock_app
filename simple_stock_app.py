@@ -7,18 +7,16 @@ from datetime import timedelta
 
 def main():
     end_date = date.today() - timedelta(days = 1) 
-    #start_date = date.today() - timedelta(years = 10) 
+    start_date = date.today() - timedelta(years = 5) 
     #name = st.text_input('Enter a Ticker Symbol')
     
     #tickerName = st.text_input('Enter the Ticker for a company')
     st.sidebar.header('User Input Features')
     tickerName = st.sidebar.text_input('Enter the Ticker for a company')
-    start_date = st.sidebar.date_input('Select a starting date')
+    start_date = st.sidebar.date_input('Select a starting date', value=start_date)
     #Define Ticker Symbol
     if not tickerName:
         tickerName='ATVI'
-    if start_date >= end_date:
-        start_date= end_date - timedelta(year = 3)
         
     #get ticker data for this Ticker
     ticker_data = yf.Ticker(tickerName)
