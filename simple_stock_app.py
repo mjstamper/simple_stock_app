@@ -17,7 +17,7 @@ def main():
     #Define Ticker Symbol
     if not tickerName:
         tickerName='ATVI'
-    if start_date == end_date:
+    if start_date >= end_date:
         start_date= end_date - timedelta(years = 3)
         
     #get ticker data for this Ticker
