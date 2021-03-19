@@ -18,7 +18,7 @@ def main():
     st.write("""
     # Simple Stock Price App 
     
-    Shown is the stock **closing price** and ***volume*** since 2010 (if applicable)
+    Shown is the stock **closing price** and ***volume*** since the date selected.
 
     """)
     #Define Ticker Symbol
