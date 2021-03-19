@@ -14,17 +14,19 @@ def main():
     st.sidebar.header('User Input Features')
     tickerName = st.sidebar.text_input('Enter the Ticker for a company')
     start_date = st.sidebar.date_input('Select a starting date')
+    #Define Ticker Symbol
     
+    #get ticker data for this Ticker
+    ticker_data = yf.Ticker(tickerName)
+    #get historical prices
+    ticker_df = ticker_data.history(period="1d", start=start_date, ends=end_date)
     st.write("""
     # Simple Stock Price App 
     
-    Shown is the stock **closing price** and ***volume*** since the date selected.
-
+    Shown is the stock **closing price** and ***volume*** for {ticker_data.info['longName']} since {start_date}.
+    
     """)
     #Define Ticker Symbol
-    if tickerName == None:
-        tickerName = 'DIS'
-    
     #get ticker data for this Ticker
     ticker_data = yf.Ticker(tickerName)
     #get historical prices
