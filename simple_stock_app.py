@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 from datetime import date
-from datetime import timedelta 
+from datetime import timedelta
+from dateutil.relativedelta import relativedelta
 
 
 def main():
     end_date = date.today() - timedelta(days = 1) 
-    start_date = date.today() - timedelta(years = 5) 
+    start_date = date.today() - relativedelta(years = 5) 
     #name = st.text_input('Enter a Ticker Symbol')
     
     #tickerName = st.text_input('Enter the Ticker for a company')
