@@ -18,7 +18,7 @@ def main():
     if not tickerName:
         tickerName='ATVI'
     if start_date >= end_date:
-        start_date= end_date - timedelta(years = 3)
+        start_date= end_date - timedelta(year = 3)
         
     #get ticker data for this Ticker
     ticker_data = yf.Ticker(tickerName)
