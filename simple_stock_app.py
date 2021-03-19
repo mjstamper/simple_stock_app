@@ -15,7 +15,8 @@ def main():
     tickerName = st.sidebar.text_input('Enter the Ticker for a company')
     start_date = st.sidebar.date_input('Select a starting date')
     #Define Ticker Symbol
-    
+    if tickerName == '':
+        tickerName=r'^SPX'
     #get ticker data for this Ticker
     ticker_data = yf.Ticker(tickerName)
     #get historical prices
