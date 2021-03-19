@@ -20,7 +20,7 @@ def main():
     ticker_data = yf.Ticker(tickerName)
     #get historical prices
     ticker_df = ticker_data.history(period="1d", start=start_date, ends=end_date)
-    st.write("""
+    st.write(f"""
     # Simple Stock Price App 
     
     Shown is the stock **closing price** and ***volume*** for {ticker_data.info['longName']} since {start_date}.
