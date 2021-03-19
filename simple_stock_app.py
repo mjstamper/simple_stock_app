@@ -23,7 +23,7 @@ def main():
     st.write(f"""
     # Simple Stock Price App 
     
-    Shown is the stock **closing price** and ***volume*** for {ticker_data.info['shortName']} since {start_date}.
+    Shown is the stock **closing price** and ***volume*** for {ticker_data.info['longName']} since {start_date}.
     
     """)
     #Define Ticker Symbol
